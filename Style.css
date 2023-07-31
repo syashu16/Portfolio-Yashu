@@ -1,0 +1,322 @@
+/* Importing the "Be Vietnam Pro" font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap");
+
+/* Global CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "be vietnam pro", sans-serif;
+}
+
+/* Setting a custom CSS variable for the background color */
+:root {
+  --bgOrange: red;
+}
+
+/* Styling for the main wrapper element */
+#wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Container element with a fixed width centered in the page */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/* Styling for the logo image */
+#logo {
+  width: 80px;
+}
+
+/* Container for the logo and other elements in the navigation bar */
+.logo-container {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+/* Styling for the navigation items (links) */
+.nav-items {
+  display: flex;
+  gap: 2rem;
+  padding: 0 4em;
+}
+
+/* Styling for each individual navigation item */
+.nav-items div {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Styling for the logo text in the navigation bar */
+.logo-text {
+  margin-left: -2rem;
+  font-size: 28px;
+}
+
+/* Styling for links in the navigation items */
+a {
+  text-decoration: none;
+}
+
+/* Styling for the navigation item links when hovered */
+.nav-items div a {
+  color: black;
+}
+
+/* Styling for the navigation item links when hovered */
+.nav-items div a:hover {
+  font-weight: bold;
+  transition: all 0.8s ease;
+}
+
+/* Styling for the hero section containing the main content */
+.hero-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  padding-bottom: 8rem;
+}
+
+/* Styling for the faded section of the hero */
+.faded-section {
+  user-select: none;
+  font-size: 7rem;
+  color: rgb(231, 231, 231);
+  bottom: -16%;
+  left: 4%;
+  font-weight: bold;
+  transition: all 0.8s ease;
+}
+
+/* Styling for the left part of the hero section */
+.hero-section-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Styling for the heading in the hero section */
+.hero-section-heading {
+  font-size: 35px;
+  color: rgb(109, 89, 147);
+  font-weight: 500;
+}
+
+/* Styling for the role text in the hero section */
+.role {
+  color: rgb(123, 70, 229);
+  font-weight: 800;
+}
+
+/* Styling for the subheading in the hero section */
+.hero-section-subhead {
+  font-size: 45px;
+  line-height: 45px;
+}
+
+/* Styling for the description in the hero section */
+.hero-section-description {
+  margin-top: 1rem;
+  width: 70%;
+  font-weight: 500;
+}
+
+/* Styling for the pink button */
+.btn-pink {
+  background-color: var(--bgOrange);
+  width: fit-content;
+  color: white;
+  padding: 0.8rem 2.3rem;
+  box-shadow: 5px 5px 7px 0px #0000003f;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 500;
+  border: solid 3px transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pseudo-element for the pink button hover effect */
+.btn-pink::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+}
+
+/* Pink button hover effect */
+.btn-pink:hover::before {
+  transform: scaleX(1);
+}
+
+/* Pink button hover effect */
+.btn-pink:hover {
+  border: solid 3px var(--bgOrange);
+  color: black;
+}
+
+/* Styling for the right part of the hero section */
+.hero-section-right {
+  position: relative;
+}
+
+/* Styling for the absolute-positioned element */
+.absolute {
+  position: absolute;
+}
+
+/* Styling for the user image in the hero section */
+.user-image {
+  padding: 2.5rem;
+  filter: grayscale(1);
+  transition: all 0.8s;
+  animation: scaleImage 5s linear infinite;
+}
+
+/* Styling for the user image itself */
+.user-image img {
+  z-index: -9;
+}
+
+/* Keyframes for the image scaling animation */
+@keyframes scaleImage {
+  0% {
+    transform: scale(1);
+    filter: grayscale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: grayscale(0);
+    box-shadow: 3px 3px 10px black;
+  }
+  100% {
+    transform: scale(1);
+    filter: grayscale(1);
+  }
+}
+
+/* Styling for the icon dots animation */
+.icon-dots {
+  z-index: 9;
+  bottom: -1rem;
+  right: 0;
+  animation-name: dots;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for the dots animation */
+@keyframes dots {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Styling for the icon cube animation */
+.icon-cube {
+  z-index: 9;
+  top: -0.8em;
+  right: 1em;
+  animation-name: cuberotate;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for the cube rotation animation */
+@keyframes cuberotate {
+  0% {
+    transform: rotateY(0deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(-12px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0);
+  }
+}
+
+/* Styling for the icon circle animation */
+.icon-circle {
+  z-index: 9;
+  left: 0;
+  bottom: 0;
+  animation-name: circle;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for the circle animation */
+@keyframes circle {
+  50% {
+    left: 5%;
+    bottom: 10%;
+  }
+}
+
+/* Styling for the icon zigzag animation */
+.icon-zigzag {
+  z-index: 9;
+  top: 1.5em;
+  left: -0.3em;
+  animation: zigzag 5s ease-in infinite;
+}
+
+/* Keyframes for the zigzag animation */
+@keyframes zigzag {
+  50% {
+    left: 5%;
+    top: 2%;
+  }
+}
+
+/* Styling for the icon plus animation */
+.icon-plus {
+  z-index: 9;
+  top: -0.8rem;
+  left: 50%;
+  animation: plus 5s ease-in infinite;
+}
+
+/* Keyframes for the plus animation */
+@keyframes plus {
+  50% {
+    top: 3%;
+    left: 48%;
+  }
+}
